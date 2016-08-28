@@ -1,0 +1,9 @@
+.building {
+  padding: 5px;
+  background: #eee;
+  cursor: pointer;
+}
+
+.building:hover {
+  background: #ddd;
+}
