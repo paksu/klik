@@ -1,15 +1,17 @@
-import * as core from '../core';
+import { BUILDINGS } from '../core/buildings';
+import { UPGRADES } from '../core/upgrades';
 import { getIncome } from '../selectors';
 
+console.log(BUILDINGS)
 const initialState = {
   money: 15,
   log: [],
 
-  buildings: core.BUILDINGS,
+  buildings: BUILDINGS,
   affordableBuildings: [],
   visibleBuildings: ['SALES_GUY'],
 
-  upgrades: core.UPGRADES,
+  upgrades: UPGRADES,
   affordableUpgrades: [],
   visibleUpgrades: [],
   builtUpgrades: []
