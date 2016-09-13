@@ -29,6 +29,8 @@ export default function(state = initialState, action) {
           ...state,
           money: state.money + action.amount
         }
+        case "CHEAT_RESTART":
+          return initialState
 
     default:
       return state
