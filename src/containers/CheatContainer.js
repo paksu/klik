@@ -19,6 +19,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
+
   return {
     addMoney: (amount) => dispatch(addMoney(amount))
   }

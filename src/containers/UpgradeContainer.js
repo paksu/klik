@@ -24,7 +24,6 @@ class UpgradeContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
-  const upgrades = state.upgrades;
   return {
     upgrades: getUpgradesForSale(state),
     canAfford: (id) => _.includes(state.affordableUpgrades, id)

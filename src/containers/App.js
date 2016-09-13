@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Overview from './Overview';
 import BuildingContainer from './BuildingContainer';
 import UpgradeContainer from './UpgradeContainer';
-import GameLogContainer from './GameLogContainer';
 import CheatContainer from './CheatContainer';
 
 class App extends Component {
