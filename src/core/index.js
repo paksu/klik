@@ -28,7 +28,97 @@ export const UPGRADES = {
     factor: 1,
     visibleAfter: 1000,
     buildingId: 'JUNIOR_DEVELOPER'
-  }
+  },
+  4: {
+    id: 4,
+    name: "Faster WiFi",
+    flavour: "Yay! New hardware",
+    icon: "game-icon-green game-icon game-icon-aerial-signal",
+    cost: 100000,
+    factor: 1,
+    visibleAfter: 100,
+    buildingId: 'JUNIOR_DEVELOPER',
+  },
+  5: {
+    id: 5,
+    name: "Free beer on fridays",
+    flavour: "People really want to come to work on fridays",
+    icon: "game-icon-yellow game-icon game-icon-beer-stein",
+    cost: 10000,
+    factor: 1,
+    visibleAfter: 100,
+    buildingId: 'JUNIOR_DEVELOPER'
+  },
+  6: {
+    id: 6,
+    name: "LSD",
+    flavour: "Dropping some acid really boosts creativity",
+    icon: "game-icon-red game-icon game-icon-acid",
+    cost: 10000,
+    factor: 1,
+    visibleAfter: 1000,
+    buildingId: 'JUNIOR_DEVELOPER'
+  },
+  7: {
+    id: 7,
+    name: "Free coffins",
+    flavour: "You never now when you need one",
+    icon: "game-icon-green game-icon game-icon-coffin",
+    cost: 1000,
+    factor: 1,
+    visibleAfter: 100,
+    buildingId: 'JUNIOR_DEVELOPER',
+  },
+  8: {
+    id: 8,
+    name: "Bathroom minigolf",
+    flavour: "Amazing sport",
+    icon: "game-icon-yellow game-icon game-icon-golf-flag",
+    cost: 1000,
+    factor: 1,
+    visibleAfter: 50,
+    buildingId: 'JUNIOR_DEVELOPER'
+  },
+  9: {
+    id: 9,
+    name: "Better headphones",
+    flavour: "Music makes working more productive",
+    icon: "game-icon-red game-icon game-icon-headphones",
+    cost: 10000,
+    factor: 1,
+    visibleAfter: 1000,
+    buildingId: 'JUNIOR_DEVELOPER'
+  },
+  10: {
+    id: 10,
+    name: "Better computers",
+    flavour: "Yay! New hardware",
+    icon: "game-icon-green game-icon game-icon-abstract-007",
+    cost: 1000,
+    factor: 1,
+    visibleAfter: 100,
+    buildingId: 'JUNIOR_DEVELOPER',
+  },
+  11: {
+    id: 11,
+    name: "Infinite soda",
+    flavour: "Soda + code = productivity++",
+    icon: "game-icon-yellow game-icon game-icon-anchor",
+    cost: 1000,
+    factor: 1,
+    visibleAfter: 50,
+    buildingId: 'JUNIOR_DEVELOPER'
+  },
+  12: {
+    id: 12,
+    name: "LSD",
+    flavour: "Dropping some acid really boosts creativity",
+    icon: "game-icon-red game-icon game-icon-acid",
+    cost: 10000,
+    factor: 1,
+    visibleAfter: 1000,
+    buildingId: 'JUNIOR_DEVELOPER'
+  },
 }
 
 const building = {
