@@ -1,8 +1,8 @@
 import { BUILDINGS } from '../core/buildings';
 import { UPGRADES } from '../core/upgrades';
+import { ACHIEVEMENTS } from '../core/achievements';
 import { getIncome } from '../selectors';
 
-console.log(BUILDINGS)
 const initialState = {
   money: 15,
   log: [],
@@ -14,7 +14,9 @@ const initialState = {
   upgrades: UPGRADES,
   affordableUpgrades: [],
   visibleUpgrades: [],
-  builtUpgrades: []
+  builtUpgrades: [],
+
+  achievements: []
 }
 
 export default function(state = initialState, action) {
