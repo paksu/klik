@@ -14,5 +14,12 @@ export const ACHIEVEMENTS = [{
     icon: "game-icon-green game-icon game-icon-meditation game-icon-4x",
     description: "Reached $10000 money"
   }
-}
-]
+},{
+  conditionFn: (state) => state.buildings.SALES_GUY.count > 0,
+  achievement: {
+    id: "HIRE_1",
+    name: "First hire",
+    icon: "game-icon-green game-icon game-icon-meditation game-icon-4x",
+    description: "Hired sales guy"
+  }
+}]

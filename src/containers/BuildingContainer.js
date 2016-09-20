@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Building from '../components/Building';
 import { buyBuilding } from '../actions';
-import _ from 'lodash';
 
 
 class BuildingContainer extends Component {
@@ -15,7 +14,7 @@ class BuildingContainer extends Component {
             key={building.id}
             building={building}
             onBuildingClick={() => this.props.buyBuildingClick(building)}
-            canAfford={this.props.canAfford(building.id)}
+            canAfford={this.props.money >= building.cost}
           />
         })}
       </div>
@@ -27,7 +26,7 @@ const mapStateToProps = (state) => {
   const buildings = state.buildings;
   return {
     buildings: state.visibleBuildings.map(buildingId => buildings[buildingId]),
-    canAfford: (buildingId) => _.includes(state.affordableBuildings, buildingId)
+    money: state.money
   }
 }
 

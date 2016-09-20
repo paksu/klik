@@ -1,9 +1,5 @@
 import _ from 'lodash';
 
-function getAffordableBuildings(buildings, money) {
-  return _.values(buildings).filter(b => money >= b.cost).map(b => b.id);
-}
-
 function getVisibleBuildings(buildings, money) {
   return _.values(buildings).filter(b => money >= b.visibleAfter).map(b => b.id);
 }
@@ -36,7 +32,7 @@ export default function(state, action) {
 
     case "ADD_BUILDING":
       const money = state.money - action.building.cost;
-      if(money < 0) {
+      if(money <= 0) {
         return state
       } else {
         return {
@@ -46,7 +42,6 @@ export default function(state, action) {
             ...state.buildings,
             [action.building.id]: building(state.buildings[action.building.id], action)
           },
-          affordableBuildings: getAffordableBuildings(state.buildings, money),
           visibleBuildings: _.union(state.visibleBuildings, getVisibleBuildings(state.buildings, state.money))
         }
       }
@@ -54,7 +49,6 @@ export default function(state, action) {
     case "PROCESS_TICK":
       return {
         ...state,
-        affordableBuildings: getAffordableBuildings(state.buildings, state.money),
         visibleBuildings: _.union(state.visibleBuildings, getVisibleBuildings(state.buildings, state.money))
       }
 

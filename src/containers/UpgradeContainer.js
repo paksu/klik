@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import Upgrade from '../components/Upgrade'
 import { buyUpgrade } from '../actions';
 import { getUpgradesForSale } from '../selectors';
-import _ from 'lodash';
 
 class UpgradeContainer extends Component {
   render() {
@@ -15,7 +14,7 @@ class UpgradeContainer extends Component {
             key={upgrade.id}
             upgrade={upgrade}
             onUpgradeClick={() => this.props.buyUpgradeClick(upgrade)}
-            canAfford={this.props.canAfford(upgrade.id)}
+            canAfford={this.props.money >= upgrade.cost}
           />
         })}
       </div>
@@ -26,7 +25,7 @@ class UpgradeContainer extends Component {
 const mapStateToProps = (state) => {
   return {
     upgrades: getUpgradesForSale(state),
-    canAfford: (id) => _.includes(state.affordableUpgrades, id)
+    money: state.money
   }
 }
 
