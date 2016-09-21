@@ -3,7 +3,7 @@ import { UPGRADES } from '../core/upgrades';
 import { getIncome } from '../selectors';
 
 const initialState = {
-  money: 15,
+  money: 50,
 
   buildings: BUILDINGS,
   visibleBuildings: ['SALES_GUY'],

@@ -1,21 +1,18 @@
 import _ from 'lodash';
+import { getNextCostN } from '../core/buildings';
 
 function getVisibleBuildings(buildings, money) {
   return _.values(buildings).filter(b => money >= b.visibleAfter).map(b => b.id);
 }
 
-function getNextCost(initialCost, currentCount, n=1) {
-  // Get cost of next n buildings
-  return Math.ceil(initialCost * Math.pow(currentCount + 1, 2))
-}
-
 function building(state, action) {
   switch (action.type) {
     case "ADD_BUILDING":
+      const newCount = state.count + 1;
       return {
         ...state,
-        count: state.count + 1,
-        cost: getNextCost(state.initialCost, state.count)
+        count: newCount,
+        cost: getNextCostN(state.initialCost, newCount),
       }
     case "ADD_UPGRADE":
       return {
