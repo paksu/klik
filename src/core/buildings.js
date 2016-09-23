@@ -54,7 +54,7 @@ export const BUILDINGS = {
     id: "SOFTWARE_ENGINEER",
     name: "Software Engineer",
     icon: "game-icon-yellow game-icon game-icon-gear-hammer game-icon-4x",
-    description: "Software engieneering is the establishment and use of sound engineering principles in order to economically obtain software that is reliable and works efficiently on real machines.",
+    description: "Software engineering is the establishment and use of sound engineering principles in order to economically obtain software that is reliable and works efficiently on real machines.",
     initialCost: 12000,
     cost: 12000,
     visibleAfter: 1000,
