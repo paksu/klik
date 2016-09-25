@@ -4,7 +4,7 @@ import Notification from '../components/Notification'
 
 const ACHIEVEMENT_TTL = 5000;
 
-class AchievementContainer extends Component {
+class AchievementNotifications extends Component {
   render() {
     return (
       <div style={{'position': 'absolute', 'top': '60px', 'right': '10px', zIndex: 10000}}>
@@ -25,4 +25,4 @@ const mapStateToProps = (state) => {
 
 export default connect(
   mapStateToProps,
-)(AchievementContainer)
+)(AchievementNotifications)

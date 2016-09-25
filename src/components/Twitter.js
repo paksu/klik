@@ -25,7 +25,7 @@ class Twitter extends Component {
     this.interval = setInterval(() => { this.updateFeed() }, 1000 );
   }
   componentWillUnmountiin() {
-    this.interval ? clearInterval(this.interval) : undefined;
+    if(this.interval) clearInterval(this.interval);
   }
 
   updateFeed() {
@@ -34,7 +34,7 @@ class Twitter extends Component {
 
     if(now - lastTweetUpdate > TWEET_GRACE_PERIOD && !currentTweet) {
       this.setState({
-        currentTweet: _.sample(tweets.filter(t => t != currentTweet)),
+        currentTweet: _.sample(tweets.filter(t => t !== currentTweet)),
         lastTweetUpdate: now
       });
     } else if(now - lastTweetUpdate > TWEET_VISIBLE && currentTweet) {
