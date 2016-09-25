@@ -7,7 +7,7 @@ const ACHIEVEMENT_TTL = 5000;
 class AchievementContainer extends Component {
   render() {
     return (
-      <div style={{'position': 'absolute', 'top': '10px', 'right': '10px', zIndex: 10}}>
+      <div style={{'position': 'absolute', 'top': '60px', 'right': '10px', zIndex: 10000}}>
         {this.props.notifications.map((notification) => {
           return <Notification key={notification.addedAt} notification={notification} />
         })}
