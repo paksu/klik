@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Overview from './Overview';
 import BuildingContainer from './BuildingContainer';
 import UpgradeContainer from './UpgradeContainer';
