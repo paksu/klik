@@ -11,6 +11,7 @@ import throttle from 'lodash/throttle';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 import 'animate.css/animate.css';
+import 'font-awesome/css/font-awesome.css';
 
 import './fonts/game-icons.css';
 import './index.css';
