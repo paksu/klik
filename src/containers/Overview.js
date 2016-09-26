@@ -15,12 +15,30 @@ const Overview = ({money, income, tweet}) => (
         <a className="navbar-brand" href="#">IT C0RP0R4TiON SiMULAt0R</a>
       </div>
       <div className="collapse navbar-collapse">
-        <p className="navbar-text text-success"><Money amount={money} /> $</p>
-        <p className="navbar-text text-success">Income <span className="text-success"><Money amount={income} /></span> $/s</p>
+        <p className="navbar-text text-success"><Money amount={money} />  <span className="text-success"><Money amount={income} /></span> $/s</p>
 
         <ul className="nav navbar-nav">
-          <li><Link to="/game">game</Link></li>
-          <li><Link to="/achievements">achievements</Link></li>
+          <li>
+            <Link to="/" activeClassName="active">
+              <i className="fa fa-play-circle" aria-hidden="true"></i>
+              {" "}
+              Game
+              </Link>
+          </li>
+          <li>
+            <Link to="/achievements" activeClassName="active">
+              <i className="fa fa-trophy" aria-hidden="true"></i>
+              {" "}
+              Achievements
+            </Link>
+          </li>
+          <li>
+            <Link to="/stats" activeClassName="active">
+              <i className="fa fa-line-chart" aria-hidden="true"></i>
+              {" "}
+              Stats
+            </Link>
+          </li>
         </ul>
 
         <div className="navbar-text navbar-right" style={{marginRight: "10px"}}>
