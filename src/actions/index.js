@@ -1,9 +1,13 @@
 export const PROCESS_TICK = 'PROCESS_TICK';
 export const ADD_BUILDING = 'ADD_BUILDING';
 export const ADD_UPGRADE = 'ADD_UPGRADE';
+export const SET_COMPANYNAME = 'SET_COMPANYNAME';
 export const CHEAT_MONEY = 'CHEAT_MONEY';
 export const CHEAT_RESTART = 'CHEAT_RESTART';
 
+export function setCompanyName(name) {
+  return { type: SET_COMPANYNAME, name };
+}
 export function createTick() {
   return { type: PROCESS_TICK };
 }

@@ -3,6 +3,7 @@ import { UPGRADES } from '../core/upgrades';
 import { getIncome } from '../selectors';
 
 const initialState = {
+  name: undefined,
   money: 50,
 
   buildings: BUILDINGS,
@@ -17,6 +18,11 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch (action.type) {
+    case "SET_COMPANYNAME":
+      return {
+        ...state,
+        name: action.name
+      }
     case "PROCESS_TICK":
       const income = getIncome(state);
       return {

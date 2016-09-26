@@ -12,7 +12,7 @@ const Overview = ({money, income, tweet}) => (
   <nav className="navbar navbar-inverse navbar-fixed-top">
     <div className="container-fluid">
       <div className="navbar-header">
-        <a className="navbar-brand" href="#">IT C0RP0R4TiON SiMULAt0R</a>
+        <span className="navbar-brand" href="#">IT C0RP0R4TiON SiMULAt0R</span>
       </div>
       <div className="collapse navbar-collapse">
         <p className="navbar-text text-success"><Money amount={money} />  <span className="text-success"><Money amount={income} /></span> $/s</p>
