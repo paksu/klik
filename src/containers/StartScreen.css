@@ -1,0 +1,15 @@
+.start-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url(/images/corporation.jpg);
+}
+
+.jumbotron.start-jumbotron {
+  background: hsla(0, 0%, 93%, 0.9);
+}
+.jumbotron h1 {
+  font-family: 'Share Tech Mono', monospace;
+}

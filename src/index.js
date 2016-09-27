@@ -15,6 +15,7 @@ import UpgradeContainer from './containers/UpgradeContainer';
 import CheatContainer from './containers/CheatContainer';
 import AchievementNotifications from './containers/AchievementNotifications';
 import AchievementGallery from './containers/AchievementGallery';
+import StartScreen from './containers/StartScreen';
 import NotFound from './components/NotFound';
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -59,28 +60,30 @@ const Stats = () => (
   <h1>Stats</h1>
 )
 
-const Start = () => (
-  <h1>Start</h1>
-)
-
-const requireInitialData = (nextState, replace) => {
+const startScreenRequired = (nextState, replace) => {
+  // redirect the user to start screen if they have not given company name
   return (nextState, replace) => {
     let state = store.getState();
-    if (!store.name) {
-      replace({ pathname: "/start" });
-    };
+    if (!state.companyName) replace({ pathname: "/start" });
+  };
+}
+const startScreenNotRequired = (nextState, replace) => {
+  // redirect the user to game screen if they have given company name
+  return (nextState, replace) => {
+    let state = store.getState();
+    if (state.companyName) replace({ pathname: "/" });
   };
 }
 
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route component={Layout} onEnter={requireInitialData(store)}>
+      <Route component={Layout} onEnter={startScreenRequired(store)}>
         <Route path="/" components={{main: Game}} />
         <Route path="/achievements" components={{main: AchievementGallery}} />
         <Route path="/stats" components={{main: Stats}} />
       </Route>
-      <Route path="/start" component={Start} />
+      <Route path="/start" component={StartScreen} onEnter={startScreenNotRequired(store)} />
       <Route path='*' component={NotFound} />
     </Router>
   </Provider>,
