@@ -9,7 +9,7 @@ class AchievementNotifications extends Component {
     return (
       <div style={{'position': 'absolute', 'top': '60px', 'right': '10px', zIndex: 10000}}>
         {this.props.notifications.map((notification) => {
-          return <Notification key={notification.addedAt} notification={notification} />
+          return <Notification key={notification.id} notification={notification} />
         })}
       </div>
     )

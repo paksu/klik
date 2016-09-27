@@ -14,7 +14,6 @@ const Building = ({building, onBuildingClick, canAfford}) => (
       <span style={{display: "inline-block"}} className="label label-default">x {building.count}</span>
       <span style={{display: "inline-block"}} className="label label-danger">Cost <Money amount={building.cost}/></span>
       <span style={{display: "inline-block"}} className="label label-primary">LVL { building.incomeFactor}</span>
-      {building.cost10}
     </div>
   </div>
 )

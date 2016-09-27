@@ -9,16 +9,32 @@ export const ACHIEVEMENTS = [{
   achievement: {
     id: "MONEY_1",
     name: "Ca$h money",
-    icon: "game-icon-green game-icon game-icon-meditation game-icon-4x",
-    description: "Reached $1000 money"
+    icon: "game-icon-yellow game-icon game-icon-orb-wand game-icon-4x",
+    description: "Reach $1000 money"
   }
 },{
-  conditionFn: (state) => state.money > 11000,
+  conditionFn: (state) => state.money > 10000,
   achievement: {
     id: "MONEY_2",
     name: "Ca$h money 2",
-    icon: "game-icon-green game-icon game-icon-meditation game-icon-4x",
-    description: "Reached $10000 money"
+    icon: "game-icon-yellow game-icon game-icon-orb-wand game-icon-4x",
+    description: "Reach $10000 money"
+  }
+},{
+  conditionFn: (state) => state.money > 100000,
+  achievement: {
+    id: "MONEY_3",
+    name: "Ca$h money 3",
+    icon: "game-icon-red game-icon game-icon-orb-wand game-icon-4x",
+    description: "Reach $100000 money"
+  }
+},{
+  conditionFn: (state) => state.money > 10000000,
+  achievement: {
+    id: "MONEY_4",
+    name: "Ca$h money 4",
+    icon: "game-icon-purple game-icon game-icon-orb-wand game-icon-4x",
+    description: "Reach $10000000 money"
   }
 },
 
@@ -30,33 +46,33 @@ export const ACHIEVEMENTS = [{
   conditionFn: (state) => getIncome(state) >= 100,
   achievement: {
     id: "INCOME_1",
-    name: "Business is booming",
-    icon: "game-icon-green game-icon game-icon-meditation game-icon-4x",
-    description: "Reached $100 income"
+    name: "Business is booming 1",
+    icon: "game-icon-blue game-icon game-icon-meditation game-icon-4x",
+    description: "Reach $100 income"
   }
 },{
   conditionFn: (state) => getIncome(state) >= 1000,
   achievement: {
     id: "INCOME_2",
     name: "Business is booming 2",
-    icon: "game-icon-green game-icon game-icon-meditation game-icon-4x",
-    description: "Reached $1000 income"
+    icon: "game-icon-yellow game-icon game-icon-meditation game-icon-4x",
+    description: "Reach $1000 income"
   }
 },{
   conditionFn: (state) => getIncome(state) >= 10000,
   achievement: {
     id: "INCOME_3",
     name: "Business is booming 3",
-    icon: "game-icon-green game-icon game-icon-meditation game-icon-4x",
-    description: "Reached $10000 income"
+    icon: "game-icon-red game-icon game-icon-meditation game-icon-4x",
+    description: "Reach $10000 income"
   }
 },{
   conditionFn: (state) => getIncome(state) >= 100000,
   achievement: {
     id: "INCOME_4",
     name: "Business is booming 4",
-    icon: "game-icon-green game-icon game-icon-meditation game-icon-4x",
-    description: "Reached $100000 income"
+    icon: "game-icon-purple game-icon game-icon-meditation game-icon-4x",
+    description: "Reach $100000 income"
   }
 },
 
@@ -71,8 +87,8 @@ export const ACHIEVEMENTS = [{
   },
   achievement: {
     id: "BUILDINGS_1",
-    name: "Hiring spree",
-    icon: "game-icon-green game-icon game-icon-meditation game-icon-4x",
+    name: "Hiring spree 1",
+    icon: "game-icon-blue game-icon game-icon-wrapping-star game-icon-4x",
     description: "Hired 10 people"
   }
 },{
@@ -83,7 +99,7 @@ export const ACHIEVEMENTS = [{
   achievement: {
     id: "BUILDINGS_2",
     name: "Hiring spree 2",
-    icon: "game-icon-green game-icon game-icon-meditation game-icon-4x",
+    icon: "game-icon-yellow game-icon game-icon-wrapping-star game-icon-4x",
     description: "Hired 100 people"
   }
 },{
@@ -94,7 +110,7 @@ export const ACHIEVEMENTS = [{
   achievement: {
     id: "BUILDINGS_3",
     name: "Hiring spree 3",
-    icon: "game-icon-green game-icon game-icon-meditation game-icon-4x",
+    icon: "game-icon-red game-icon game-icon-wrapping-star game-icon-4x",
     description: "Hired 1000 people"
   }
 },{
@@ -105,7 +121,7 @@ export const ACHIEVEMENTS = [{
   achievement: {
     id: "BUILDINGS_4",
     name: "Hiring spree 4",
-    icon: "game-icon-green game-icon game-icon-meditation game-icon-4x",
+    icon: "game-icon-purple game-icon game-icon-wrapping-star game-icon-4x",
     description: "Hired 1000 people"
   }
 },
@@ -120,7 +136,7 @@ export const ACHIEVEMENTS = [{
   achievement: {
     id: "SALES_1",
     name: "Sales team",
-    icon: "game-icon-green game-icon game-icon-meditation game-icon-4x",
+    icon: "game-icon-blue game-icon game-icon-fire-bomb game-icon-4x",
     description: "Hired 25 sales guys"
   }
 },{
@@ -128,7 +144,7 @@ export const ACHIEVEMENTS = [{
   achievement: {
     id: "SALES_2",
     name: "Sales division",
-    icon: "game-icon-green game-icon game-icon-meditation game-icon-4x",
+    icon: "game-icon-yellow game-icon game-icon-fire-bomb game-icon-4x",
     description: "Hired 100 sales guys guy"
   }
 },{
@@ -136,7 +152,7 @@ export const ACHIEVEMENTS = [{
   achievement: {
     id: "SALES_3",
     name: "Too much sales",
-    icon: "game-icon-green game-icon game-icon-meditation game-icon-4x",
+    icon: "game-icon-red game-icon game-icon-fire-bomb game-icon-4x",
     description: "Hired 1000 sales guy"
   }
 }]
