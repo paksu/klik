@@ -8,11 +8,11 @@ import Twitter from '../components/Twitter';
 import './Overview.css';
 
 
-const Overview = ({money, income, tweet}) => (
+const Overview = ({companyName, money, income}) => (
   <nav className="navbar navbar-inverse navbar-fixed-top">
     <div className="container-fluid">
       <div className="navbar-header">
-        <span className="navbar-brand" href="#">IT C0RP0R4TiON SiMULAt0R</span>
+        <span className="navbar-brand" href="#">{companyName}</span>
       </div>
       <div className="collapse navbar-collapse">
         <p className="navbar-text text-success"><Money amount={money} />  <span className="text-success"><Money amount={income} /></span> $/s</p>
@@ -42,7 +42,7 @@ const Overview = ({money, income, tweet}) => (
         </ul>
 
         <div className="navbar-text navbar-right" style={{marginRight: "10px"}}>
-          <Twitter tweet={tweet} />
+          <Twitter companyName={companyName} />
         </div>
       </div>
     </div>
@@ -56,6 +56,7 @@ Overview.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
+    companyName: state.companyName,
     money: state.money,
     income: getIncome(state)
   }
