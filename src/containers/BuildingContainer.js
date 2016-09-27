@@ -8,7 +8,7 @@ class BuildingContainer extends Component {
   render() {
     return (
       <div className="col-md-6">
-        <h4>HR Department</h4>
+        <h3>HR Department</h3>
         {this.props.buildings.map((building) => {
           return <Building
             key={building.id}

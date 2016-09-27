@@ -15,7 +15,16 @@ const Overview = ({companyName, money, income}) => (
         <span className="navbar-brand" href="#">{companyName}</span>
       </div>
       <div className="collapse navbar-collapse">
-        <p className="navbar-text text-success"><Money amount={money} />  <span className="text-success"><Money amount={income} /></span> $/s</p>
+        <p className="navbar-text text-success">
+          <span className="label label-primary" style={{fontSize: "1em"}}>
+          {" "}
+          $ <Money amount={money} />
+          </span>
+          <span className="label label-success" style={{fontSize: "1em"}}>
+          <Money amount={income} />
+          {" $/s "}
+          </span>
+        </p>
 
         <ul className="nav navbar-nav">
           <li>

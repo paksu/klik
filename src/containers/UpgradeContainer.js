@@ -8,7 +8,12 @@ class UpgradeContainer extends Component {
   render() {
     return (
       <div className="col-md-6">
-        <h4>Productivity boosts</h4>
+        <h3>Productivity boosts</h3>
+        <div className="text-muted" style={{display: this.props.upgrades.length ? 'none': 'block'}}>
+          <i className="fa fa-lock"></i>
+          {" "}
+          Upgrades will be unlocked after you earn more money
+        </div>
         {this.props.upgrades.map((upgrade) => {
           return <Upgrade
             key={upgrade.id}
