@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Building from '../components/Building';
 import { buyBuilding } from '../actions';
+import _ from 'lodash';
 
 
 class BuildingContainer extends Component {
@@ -25,7 +26,7 @@ class BuildingContainer extends Component {
 const mapStateToProps = (state) => {
   const buildings = state.buildings;
   return {
-    buildings: state.visibleBuildings.map(buildingId => buildings[buildingId]),
+    buildings: _.values(buildings).filter(b => b.visibleAfter < state.maxMoney),
     money: state.money
   }
 }

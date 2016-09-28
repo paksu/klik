@@ -1,10 +1,6 @@
 import _ from 'lodash';
 import { getNextCostN } from '../core/buildings';
 
-function getVisibleBuildings(buildings, money) {
-  return _.values(buildings).filter(b => money >= b.visibleAfter).map(b => b.id);
-}
-
 function building(state, action) {
   switch (action.type) {
     case "ADD_BUILDING":
@@ -40,15 +36,13 @@ export default function(state, action) {
           buildings: {
             ...state.buildings,
             [action.building.id]: building(state.buildings[action.building.id], action)
-          },
-          visibleBuildings: _.union(state.visibleBuildings, getVisibleBuildings(state.buildings, state.money))
+          }
         }
       }
 
     case "PROCESS_TICK":
       return {
         ...state,
-        visibleBuildings: _.union(state.visibleBuildings, getVisibleBuildings(state.buildings, state.money))
       }
 
     case "ADD_UPGRADE":

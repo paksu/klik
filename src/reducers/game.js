@@ -6,12 +6,11 @@ const initialState = {
   companyName: undefined,
   // How much money does the player have
   money: 50,
+  // The maximum amount of money that the player has ever had
+  maxMoney: 50,
 
   // Buildings (hired staff) that get upgraded as we go
   buildings: BUILDINGS,
-  // List of buildings that the player sees
-  visibleBuildings: ['SALES_GUY'],
-
   // List of upgrade ids that tha player has built
   builtUpgrades: [],
 
@@ -32,7 +31,8 @@ export default function(state = initialState, action) {
       const income = getIncome(state);
       return {
         ...state,
-        money: state.money + income
+        money: state.money + income,
+        maxMoney: Math.max(state.maxMoney, state.money + income)
       }
 
     case "CHEAT_MONEY":
