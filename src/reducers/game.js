@@ -1,5 +1,11 @@
 import { getIncome } from '../core/helpers';
 import { BUILDINGS } from '../core/buildings';
+import _ from 'lodash';
+
+const initialBuildingData = BUILDINGS.reduce(function(byId, building) {
+  byId[building.id] = _.pick(building, ['count', 'income', 'incomeFactor', 'initialCost', 'cost']);
+  return byId
+}, {});
 
 const initialState = {
   // Name of the company that the player gives in the splas screen
@@ -10,14 +16,13 @@ const initialState = {
   maxMoney: 50,
 
   // Buildings (hired staff) that get upgraded as we go
-  buildings: BUILDINGS,
+  buildings: initialBuildingData,
   // List of upgrade ids that tha player has built
   builtUpgrades: [],
 
   // Achievements that the player has reached
   achievements: []
 }
-
 
 export default function(state = initialState, action) {
   switch (action.type) {

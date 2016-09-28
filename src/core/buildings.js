@@ -16,8 +16,7 @@ const building = {
   visibleAfter: 0,
 };
 
-export const BUILDINGS = {
-  "SALES_GUY": {
+export const BUILDINGS = [{
     ...building,
     id: "SALES_GUY",
     name: "Sales guy",
@@ -26,8 +25,7 @@ export const BUILDINGS = {
     income: 1,
     cost: 15,
     initialCost: 15
-  },
-  "JUNIOR_DEVELOPER": {
+  }, {
     ...building,
     id: "JUNIOR_DEVELOPER",
     name: "Junior Developer",
@@ -37,8 +35,7 @@ export const BUILDINGS = {
     cost: 100,
     visibleAfter: 10,
     income: 5
-  },
-  "DESIGNER": {
+  }, {
     ...building,
     id: "DESIGNER",
     name: "Designer",
@@ -48,8 +45,7 @@ export const BUILDINGS = {
     cost: 1000,
     visibleAfter: 100,
     income: 75
-  },
-  "SOFTWARE_ENGINEER": {
+  }, {
     ...building,
     id: "SOFTWARE_ENGINEER",
     name: "Software Engineer",
@@ -59,8 +55,7 @@ export const BUILDINGS = {
     cost: 12000,
     visibleAfter: 1000,
     income: 450
-  },
-  "CONSULTANT": {
+  }, {
     ...building,
     id: "CONSULTANT",
     name: "Consultant",
@@ -70,8 +65,7 @@ export const BUILDINGS = {
     cost: 130000,
     visibleAfter: 10000,
     income: 2200
-  },
-  "MIDDLE_MANAGER": {
+  }, {
     ...building,
     id: "MIDDLE_MANAGER",
     name: "Middle manager",
@@ -81,8 +75,7 @@ export const BUILDINGS = {
     cost: 1.4e6,
     visibleAfter: 100000,
     income: 14000
-  },
-  "CEO": {
+  }, {
     ...building,
     id: "CEO",
     name: "CEO",
@@ -93,4 +86,4 @@ export const BUILDINGS = {
     visibleAfter: 1e6,
     income: 1e5
   }
-}
+]
