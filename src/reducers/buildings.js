@@ -14,11 +14,13 @@ function building(state, action) {
         count: newCount,
         cost: getNextCostN(state.initialCost, newCount),
       }
+
     case "ADD_UPGRADE":
       return {
         ...state,
         incomeFactor: action.upgrade.factor + state.incomeFactor
       }
+
     default:
       return state
   }
