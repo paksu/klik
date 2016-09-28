@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getIncome } from '../selectors';
+import { getIncome } from '../core/helpers';
 import { Link } from 'react-router';
 import Money from '../components/Money';
 import Twitter from '../components/Twitter';

@@ -1,6 +1,5 @@
 import { BUILDINGS } from '../core/buildings';
-import { UPGRADES } from '../core/upgrades';
-import { getIncome } from '../selectors';
+import { getIncome } from '../core/helpers';
 
 const initialState = {
   companyName: undefined,
@@ -9,7 +8,6 @@ const initialState = {
   buildings: BUILDINGS,
   visibleBuildings: ['SALES_GUY'],
 
-  upgrades: UPGRADES,
   visibleUpgrades: [],
   builtUpgrades: [],
 

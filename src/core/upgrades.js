@@ -1,9 +1,8 @@
-export const UPGRADES = {
+export const UPGRADES = [
   /*
   * SALES_GUY
   */
-
-  1: {
+{
     id: 1,
     name: "Bathroom minigolf",
     effect: "Doubles profits from sales guy",
@@ -13,8 +12,7 @@ export const UPGRADES = {
     factor: 1,
     visibleAfter: 100,
     buildingId: 'SALES_GUY'
-  },
-  2: {
+  }, {
     id: 2,
     name: "Sales bell",
     effect: "2x profit from Sales guy",
@@ -24,8 +22,7 @@ export const UPGRADES = {
     factor: 1,
     visibleAfter: 1000,
     buildingId: 'SALES_GUY'
-  },
-  3: {
+  }, {
     id: 3,
     name: "Nokia 3210",
     effect: "Sales Guy profits increased 100%",
@@ -35,8 +32,7 @@ export const UPGRADES = {
     factor: 1,
     visibleAfter: 10000,
     buildingId: 'SALES_GUY',
-  },
-  4: {
+  }, {
     id: 4,
     name: "Company car",
     effect: "2x profit from Sales Guy",
@@ -47,12 +43,10 @@ export const UPGRADES = {
     visibleAfter: 1e5,
     buildingId: 'SALES_GUY',
   },
-
   /*
   * JUNIOR_DEVELOPER
   */
-
-  5: {
+  {
     id: 5,
     name: "Better computers",
     effect: "Junior developer profit x2",
@@ -62,8 +56,7 @@ export const UPGRADES = {
     factor: 1,
     visibleAfter: 1000,
     buildingId: 'JUNIOR_DEVELOPER',
-  },
-  6: {
+  }, {
     id: 6,
     name: "Infinite soda",
     effect: "Jr dev profits increased 100%",
@@ -73,8 +66,7 @@ export const UPGRADES = {
     factor: 1,
     visibleAfter: 20000,
     buildingId: 'JUNIOR_DEVELOPER'
-  },
-  7: {
+  }, {
     id: 7,
     name: "LSD",
     effect: "100% profit increase for Jr dev",
@@ -84,8 +76,7 @@ export const UPGRADES = {
     factor: 1,
     visibleAfter: 200000,
     buildingId: 'JUNIOR_DEVELOPER'
-  },
-  8: {
+  }, {
     id: 8,
     name: "Faster WiFi",
     effect: "Jr devs work faster. 2x profits",
@@ -95,5 +86,5 @@ export const UPGRADES = {
     factor: 1,
     visibleAfter: 1e5,
     buildingId: 'JUNIOR_DEVELOPER',
-  },
-}
+  }
+]

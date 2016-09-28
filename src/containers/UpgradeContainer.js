@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Upgrade from '../components/Upgrade'
 import { buyUpgrade } from '../actions';
-import { getUpgradesForSale } from '../selectors';
+import { UPGRADES } from '../core/upgrades';
+import Upgrade from '../components/Upgrade';
+import _ from 'lodash';
+
 
 class UpgradeContainer extends Component {
   render() {
@@ -28,8 +30,9 @@ class UpgradeContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
+  const upgradesByCost = _.sortBy(UPGRADES, 'cost')
   return {
-    upgrades: getUpgradesForSale(state),
+    upgrades: upgradesByCost.filter(u => ! state.builtUpgrades.find(b => b === u.id)),
     money: state.money
   }
 }

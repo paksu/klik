@@ -1,4 +1,4 @@
-import { getIncome } from '../selectors';
+import { getIncome } from '../core/helpers';
 import _ from 'lodash';
 
 export const ACHIEVEMENTS = [{
