@@ -9,14 +9,8 @@ export default function(state, action) {
       }
 
     case "ADD_UPGRADE":
-      const money = state.money - action.upgrade.cost;
-      if(money <= 0) {
-        return state;
-      }
-
       return {
         ...state,
-        money,
         builtUpgrades: _.union(state.builtUpgrades, [action.upgrade.id])
       }
 

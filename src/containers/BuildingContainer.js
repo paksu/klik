@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { buyBuilding, alterMoney } from '../actions';
+import { BUILDINGS } from '../core/buildings';
 import Building from '../components/Building';
-import { buyBuilding } from '../actions';
 import _ from 'lodash';
 
 
@@ -14,7 +15,7 @@ class BuildingContainer extends Component {
           return <Building
             key={building.id}
             building={building}
-            onBuildingClick={() => this.props.buyBuildingClick(building)}
+            onBuildingClick={() => this.props.buyBuildingClick(building, this.props.money)}
             canAfford={this.props.money >= building.cost}
           />
         })}
@@ -26,14 +27,19 @@ class BuildingContainer extends Component {
 const mapStateToProps = (state) => {
   const buildings = state.buildings;
   return {
-    buildings: _.values(buildings).filter(b => b.visibleAfter < state.maxMoney),
+    buildings: BUILDINGS.filter(b => b.visibleAfter < state.maxMoney).map(b => Object.assign({}, b, buildings[b.id])),
     money: state.money
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    buyBuildingClick: (building) => dispatch(buyBuilding(building))
+    buyBuildingClick: (building, money) => {
+      if(money >= building.cost) {
+        dispatch(alterMoney(-building.cost));
+        dispatch(buyBuilding(building));
+      }
+    }
   }
 }
 

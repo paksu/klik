@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { buyUpgrade } from '../actions';
+import { buyUpgrade, alterMoney } from '../actions';
 import { UPGRADES } from '../core/upgrades';
 import Upgrade from '../components/Upgrade';
 import _ from 'lodash';
@@ -20,7 +20,7 @@ class UpgradeContainer extends Component {
           return <Upgrade
             key={upgrade.id}
             upgrade={upgrade}
-            onUpgradeClick={() => this.props.buyUpgradeClick(upgrade)}
+            onUpgradeClick={() => this.props.buyUpgradeClick(upgrade, this.props.money)}
             canAfford={this.props.money >= upgrade.cost}
           />
         })}
@@ -39,7 +39,12 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    buyUpgradeClick: (upgrade) => dispatch(buyUpgrade(upgrade))
+    buyUpgradeClick: (upgrade, money) => {
+      if(money >= upgrade.cost) {
+        dispatch(alterMoney(-upgrade.cost))
+        dispatch(buyUpgrade(upgrade))
+      }
+    }
   }
 }
 

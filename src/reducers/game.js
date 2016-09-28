@@ -35,7 +35,7 @@ export default function(state = initialState, action) {
         maxMoney: Math.max(state.maxMoney, state.money + income)
       }
 
-    case "CHEAT_MONEY":
+    case "ALTER_MONEY":
       return {
         ...state,
         money: state.money + action.amount

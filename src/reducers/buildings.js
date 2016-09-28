@@ -26,23 +26,12 @@ export default function(state, action) {
   switch (action.type) {
 
     case "ADD_BUILDING":
-      const money = state.money - action.building.cost;
-      if(money <= 0) {
-        return state
-      } else {
-        return {
-          ...state,
-          money,
-          buildings: {
-            ...state.buildings,
-            [action.building.id]: building(state.buildings[action.building.id], action)
-          }
-        }
-      }
-
-    case "PROCESS_TICK":
       return {
         ...state,
+        buildings: {
+          ...state.buildings,
+          [action.building.id]: building(state.buildings[action.building.id], action)
+        }
       }
 
     case "ADD_UPGRADE":

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addMoney, restart } from '../actions';
+import { alterMoney, restart } from '../actions';
 
 
 class CheatContainer extends Component {
@@ -8,7 +8,7 @@ class CheatContainer extends Component {
     return (
       <div>
         <b> Cheats </b>
-        <button className="btn btn-danger" onClick={() => this.props.addMoney(10000)}>Add 10000$</button>
+        <button className="btn btn-danger" onClick={() => this.props.alterMoney(10000)}>Add 10000$</button>
         <button className="btn btn-primary" onClick={() => this.props.restart()}>Start over</button>
       </div>
     )
@@ -22,7 +22,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 
   return {
-    addMoney: (amount) => dispatch(addMoney(amount)),
+    alterMoney: (amount) => dispatch(alterMoney(amount)),
     restart: (amount) => dispatch(restart())
   }
 }
