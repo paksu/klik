@@ -9,7 +9,7 @@ import _ from 'lodash';
 class BuildingContainer extends Component {
   render() {
     return (
-      <div className="col-md-6">
+      <div className="col-md-3">
         <h3>HR Department</h3>
         {this.props.buildings.map((building) => {
           return <Building

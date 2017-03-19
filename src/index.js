@@ -46,7 +46,7 @@ const Layout = ({main}) => (
   <div>
     <Overview />
     <AchievementNotifications />
-    <div className="container" style={{marginTop: "55px"}}>
+    <div style={{marginTop: "55px", marginLeft: "15px", marginRight: "15px"}}>
       <CheatContainer />
       {main}
     </div>
@@ -56,6 +56,9 @@ const Layout = ({main}) => (
 const Game = () => (
   <div className="row">
     <BuildingContainer />
+    <div className="col-md-6" style={{textAlign: "center"}}>
+      <img src="/images/pixel-city.jpg" style={{width: "60%"}}></img>
+    </div>
     <UpgradeContainer />
   </div>
 )

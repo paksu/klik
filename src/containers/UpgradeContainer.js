@@ -9,7 +9,7 @@ import _ from 'lodash';
 class UpgradeContainer extends Component {
   render() {
     return (
-      <div className="col-md-6">
+      <div className="col-md-3">
         <h3>Productivity boosts</h3>
         <div className="text-muted" style={{display: this.props.upgrades.length ? 'none': 'block'}}>
           <i className="fa fa-lock"></i>
