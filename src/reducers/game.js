@@ -12,14 +12,16 @@ const initialState = {
   companyName: undefined,
   // How much money does the player have
   money: 50,
-  // The maximum amount of money that the player has ever had
+  // The maximum amount of money that the player has ever had. Used for display & achievements
   maxMoney: 50,
-
-  // Buildings (hired staff) that get upgraded as we go
+  // Current incomes.  Used for display & achievements
+  moneyIncome: 0,
+  // Hired staff that get upgraded as we go
   buildings: initialBuildingData,
   // List of upgrade ids that tha player has built
   builtUpgrades: [],
-
+  // Total count of staff hired. Used for achievements
+  staffCount: 0,
   // Achievements that the player has reached
   achievements: []
 }
@@ -37,13 +39,20 @@ export default function(state = initialState, action) {
       return {
         ...state,
         money: state.money + income,
-        maxMoney: Math.max(state.maxMoney, state.money + income)
+        maxMoney: Math.max(state.maxMoney, state.money + income),
+        moneyIncome: income
       }
 
     case "ALTER_MONEY":
       return {
         ...state,
         money: state.money + action.amount
+      }
+
+    case "ADD_BUILDING":
+      return {
+        ...state,
+        staffCount: state.staffCount + 1
       }
 
     case "CHEAT_RESTART":

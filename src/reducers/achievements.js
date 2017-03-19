@@ -1,8 +1,8 @@
-import { ACHIEVEMENTS } from '../core/achievements';
+import { ACHIEVEMENTS, validate } from '../core/achievements';
 import _ from 'lodash';
 
 export default function(state, action) {
-  const newAchievements = ACHIEVEMENTS.filter(a => a.conditionFn(state)).map(a => a.achievement);
+  const newAchievements = ACHIEVEMENTS.filter(a => validate(state, a));
 
   const addedAchievements =
     _.differenceBy(newAchievements, state.achievements, 'id')
