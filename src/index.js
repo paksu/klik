@@ -28,7 +28,11 @@ import './index.css';
 
 const persistedState = loadState();
 
-let store = createStore(reducers, persistedState)
+let store = createStore(
+  reducers,
+  persistedState,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
 
 store.subscribe(throttle(() => {
   saveState(store.getState());
@@ -36,7 +40,7 @@ store.subscribe(throttle(() => {
 
 window.setInterval(() => {
   store.dispatch(createTick());
-}, 500);
+}, 1000);
 
 const Layout = ({main}) => (
   <div>
