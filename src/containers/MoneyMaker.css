@@ -1,0 +1,15 @@
+.example-enter {
+  opacity: 1;
+  display: inline-block !important;
+  position: absolute;
+}
+
+.example-enter.example-enter-active {
+  display: inline-block;
+  opacity: 0;
+  transform: translate(0, -25px);
+  -webkit-transform: translate(0, -25px);
+  -o-transform: translate(0, -25px);
+  -moz-transform: translate(0, -25px);
+  transition: all 750ms ease-out;
+}
