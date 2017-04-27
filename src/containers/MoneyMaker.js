@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group' // ES6
 import { connect } from 'react-redux';
-import { getIncome } from '../core/helpers';
 import Money from '../components/Money';
 
 import './MoneyMaker.css';

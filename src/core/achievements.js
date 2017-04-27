@@ -1,7 +1,3 @@
-import { getIncome } from '../core/helpers';
-import _ from 'lodash';
-
-
 export const validate = (state, achievement) => {
   // Do a nested lookup into state
   // http://stackoverflow.com/questions/8051975/access-object-child-properties-using-a-dot-notation-string
