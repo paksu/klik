@@ -12,8 +12,7 @@ export const validate = (state, achievement) => {
   return false;
 }
 
-export const ACHIEVEMENTS = [
-{
+export const ACHIEVEMENTS = [{
   id: "money-achivement-1",
   name: "Ca$h money",
   icon: "game-icon-yellow game-icon game-icon-orb-wand game-icon-4x",

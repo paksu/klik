@@ -22,7 +22,7 @@ class AchievementGallery extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    achievements: _.unionBy(state.achievements, ACHIEVEMENTS.map(a => a.achievement), 'id')
+    achievements: _.unionBy(state.achievements, ACHIEVEMENTS, 'id')
   }
 }
 
