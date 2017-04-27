@@ -12,7 +12,7 @@ import throttle from 'lodash/throttle';
 import Overview from './containers/Overview';
 import BuildingContainer from './containers/BuildingContainer';
 import UpgradeContainer from './containers/UpgradeContainer';
-import MoneyMaker from './containers/MoneyMaker';
+import IncomeContainer from './containers/IncomeContainer';
 import CheatContainer from './containers/CheatContainer';
 import AchievementNotifications from './containers/AchievementNotifications';
 import AchievementGallery from './containers/AchievementGallery';
@@ -57,7 +57,7 @@ const Layout = ({main}) => (
 const Game = () => (
   <div className="row">
     <BuildingContainer />
-    <MoneyMaker />
+    <IncomeContainer />
     <UpgradeContainer />
   </div>
 )
