@@ -18,6 +18,15 @@ export default function(state, action) {
         }
     }
 
+    case "WORK_CLICK":
+      return {
+        ...state,
+        stats: {
+          ...state.stats,
+          timesClicked: state.stats.timesClicked + 1
+        }
+    }
+
     case "ALTER_MONEY":
       return {
       ...state,

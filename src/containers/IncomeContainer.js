@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group' // ES6
 import { connect } from 'react-redux';
 import Money from '../components/Money';
+import { createTick, createClick } from '../actions';
 
 import './IncomeContainer.css';
 
@@ -57,6 +58,9 @@ class IncomeContainer extends Component {
           <div className="col-md-3 text-muted" style={{fontSize: "2em"}}>0</div>
           <div className="col-md-3 text-muted" style={{fontSize: "2em"}}>0</div>
         </div>
+        <button className="btn btn-block btn-success" style={{minHeight: "50px"}} onClick={this.props.doWork}>
+          <i className="fa fa-gears" style={{fontSize: "2em"}}/> Do some Work
+        </button>
       </div>
     )
   }
@@ -76,7 +80,15 @@ const mapStateToProps = (state) => {
     money: state.money,
   }
 }
-
+const mapDispatchToProps = (dispatch) => {
+  return {
+    doWork: () => {
+      dispatch(createTick())
+      dispatch(createClick())
+    }
+  }
+}
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(IncomeContainer)
