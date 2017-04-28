@@ -8,9 +8,9 @@ import { getDisplay } from '../components/Money';
 import './Overview.css';
 
 
-const Overview = ({companyName, money}) => (
+const Overview = ({companyName, money, swagger, innovation}) => (
   <nav className="navbar navbar-inverse navbar-fixed-top">
-    <DocumentTitle title={`Klik (${getDisplay(money)})`}></DocumentTitle>
+    <DocumentTitle title={`Klik (${getDisplay(money)} / ${getDisplay(swagger)} / ${getDisplay(innovation)})`}></DocumentTitle>
 
     <div className="container-fluid">
       <div className="navbar-header">
@@ -52,7 +52,9 @@ const Overview = ({companyName, money}) => (
 const mapStateToProps = (state) => {
   return {
     companyName: state.companyName,
-    money: state.money
+    money: state.money,
+    swagger: state.swagger,
+    innovation: state.innovation
   }
 }
 
