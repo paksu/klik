@@ -23,7 +23,18 @@ const initialState = {
   // Total count of staff hired. Used for achievements
   staffCount: 0,
   // Achievements that the player has reached
-  achievements: []
+  achievements: [],
+
+  // stats
+  stats: {
+    maxMoney: 0,
+    totalMoneyEarned: 0,
+    totalMoneySpent: 0,
+    maxIncome: 0,
+    maxStaff: 0,
+    achievementCount: 0,
+    timesClicked: 0
+  }
 }
 
 export default function(state = initialState, action) {

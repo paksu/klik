@@ -16,6 +16,7 @@ import IncomeContainer from './containers/IncomeContainer';
 import CheatContainer from './containers/CheatContainer';
 import AchievementNotifications from './containers/AchievementNotifications';
 import AchievementGallery from './containers/AchievementGallery';
+import Stats from './containers/Stats';
 import StartScreen from './containers/StartScreen';
 import NotFound from './components/NotFound';
 
@@ -60,10 +61,6 @@ const Game = () => (
     <IncomeContainer />
     <UpgradeContainer />
   </div>
-)
-
-const Stats = () => (
-  <h1>Stats</h1>
 )
 
 const startScreenRequired = (nextState, replace) => {
