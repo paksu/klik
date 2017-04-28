@@ -10,7 +10,7 @@ import './Overview.css';
 
 const Overview = ({companyName, money, swagger, innovation}) => (
   <nav className="navbar navbar-inverse navbar-fixed-top">
-    <DocumentTitle title={`Klik (${getDisplay(money)} / ${getDisplay(swagger)} / ${getDisplay(innovation)})`}></DocumentTitle>
+    <DocumentTitle title={`Klik (${getDisplay(money)}/${getDisplay(innovation)}/${getDisplay(swagger)})`}></DocumentTitle>
 
     <div className="container-fluid">
       <div className="navbar-header">
