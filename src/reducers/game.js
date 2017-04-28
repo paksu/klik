@@ -32,6 +32,7 @@ const initialState = {
     totalMoneySpent: 0,
     maxIncome: 0,
     maxStaff: 0,
+    maxUpgrades: 0,
     achievementCount: 0,
     timesClicked: 0
   }

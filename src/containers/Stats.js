@@ -25,6 +25,9 @@ const Stats = ({stats}) => (
         <dt>Maximum staff</dt>
         <dd>{stats.maxStaff}</dd>
 
+        <dt>Maximum upgrades</dt>
+        <dd>{stats.maxUpgrades}</dd>
+
         <dt>Times clicked</dt>
         <dd>{stats.timesClicked}</dd>
       </dl>

@@ -14,7 +14,8 @@ export default function(state, action) {
           achievementCount: Math.max(state.stats.achievementCount, state.achievements.length),
           totalMoneyEarned: state.stats.totalMoneyEarned + state.moneyIncome,
           maxIncome: Math.max(state.stats.maxIncome, state.moneyIncome),
-          maxStaff: Math.max(state.stats.maxStaff, staffCount)
+          maxStaff: Math.max(state.stats.maxStaff, staffCount),
+          maxUpgrades: Math.max(state.stats.maxUpgrades, state.builtUpgrades.length),
         }
     }
 
