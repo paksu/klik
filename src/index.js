@@ -19,6 +19,7 @@ import AchievementGallery from './containers/AchievementGallery';
 import Stats from './containers/Stats';
 import StartScreen from './containers/StartScreen';
 import NotFound from './components/NotFound';
+import ReactTooltip from 'react-tooltip'
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
@@ -48,6 +49,7 @@ window.setInterval(() => {
 
 const Layout = ({main}) => (
   <div>
+    <ReactTooltip />
     <Overview />
     <AchievementNotifications />
     <div style={{marginTop: "55px", marginLeft: "15px", marginRight: "15px"}}>

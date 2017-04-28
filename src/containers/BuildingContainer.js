@@ -10,7 +10,12 @@ class BuildingContainer extends Component {
   render() {
     return (
       <div className="col-md-3">
-        <h3>HR Department</h3>
+        <h3>
+          HR Department
+          {" "}
+          <i className="fa fa-question-circle-o" data-tip="Spend cash to hire staff so you can make money" />
+        </h3>
+
         {this.props.buildings.map((building) => {
           return <Building
             key={building.id}

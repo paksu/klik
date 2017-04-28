@@ -10,7 +10,7 @@ class UpgradeContainer extends Component {
   render() {
     return (
       <div className="col-md-3">
-        <h3>Productivity boosts</h3>
+        <h3>Productivity boosts <i className="fa fa-question-circle-o" data-tip="Spend swagger to upgrade staff" /></h3>
         <div className="text-muted" style={{display: this.props.upgrades.length ? 'none': 'block'}}>
           <i className="fa fa-lock"></i>
           {" "}
