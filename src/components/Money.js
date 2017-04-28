@@ -1,6 +1,6 @@
 import React from 'react'
 
-const getDisplay = (amount) => {
+export const getDisplay = (amount) => {
   if(amount > 1e4 && amount < 1e6) {
     return (amount/1000).toFixed(3) + "k";
   } else if(amount >= 1e6 && amount < 1e9) {

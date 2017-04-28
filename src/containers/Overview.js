@@ -2,12 +2,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import Twitter from '../components/Twitter';
+import DocumentTitle from 'react-document-title';
+import { getDisplay } from '../components/Money';
 
 import './Overview.css';
 
 
-const Overview = ({companyName}) => (
+const Overview = ({companyName, money}) => (
   <nav className="navbar navbar-inverse navbar-fixed-top">
+    <DocumentTitle title={`Klik (${getDisplay(money)})`}></DocumentTitle>
+
     <div className="container-fluid">
       <div className="navbar-header">
         <span className="navbar-brand" href="#">{companyName}</span>
@@ -47,7 +51,8 @@ const Overview = ({companyName}) => (
 
 const mapStateToProps = (state) => {
   return {
-    companyName: state.companyName
+    companyName: state.companyName,
+    money: state.money
   }
 }
 
