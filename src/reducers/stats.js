@@ -2,7 +2,6 @@ import { getIncome } from '../core/helpers';
 import { BUILDINGS } from '../core/buildings';
 import _ from 'lodash';
 
-
 export default function(state, action) {
   switch (action.type) {
     case "PROCESS_TICK":
