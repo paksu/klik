@@ -23,13 +23,13 @@ class IncomeContainer extends Component {
     const innovationIncome = nextProps.innovation - this.props.innovation;
     const animatedIncomes = this.state.animatedIncomes.filter(i => new Date() - i.addedAt < FADE_ANIMATION_LENGTH);
     let newIncomes = []
-    if(moneyIncome) {
+    if(moneyIncome > 0) {
       newIncomes.push({type: "money", key: this.state.elementId++, addedAt: new Date().getTime(), income: moneyIncome});
     }
-    if(swaggerIncome) {
+    if(swaggerIncome > 0) {
       newIncomes.push({type: "swagger", key: this.state.elementId++, addedAt: new Date().getTime(), income: swaggerIncome});
     }
-    if(innovationIncome) {
+    if(innovationIncome > 0) {
       newIncomes.push({type: "innovation", key: this.state.elementId++, addedAt: new Date().getTime(), income: innovationIncome});
     }
     this.setState({
