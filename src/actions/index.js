@@ -9,8 +9,8 @@ export const WORK_CLICK  = 'WORK_CLICK';
 export function setCompanyName(name) {
   return { type: SET_COMPANYNAME, name };
 }
-export function createTick() {
-  return { type: PROCESS_TICK };
+export function createTick(innovationAmount = 0, swaggerAmount = 0) {
+  return { type: PROCESS_TICK, innovationAmount, swaggerAmount};
 }
 
 export function createClick() {

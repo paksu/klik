@@ -13,15 +13,27 @@ class IncomeContainer extends Component {
     super(props);
     this.state = {
       elementId: 0,
-      moneyIncome: []
+      animatedIncomes: []
     };
   }
 
   componentWillReceiveProps(nextProps) {
-    const income = this.state.moneyIncome.filter(i => new Date() - i.addedAt < FADE_ANIMATION_LENGTH);
     const moneyIncome = nextProps.money - this.props.money;
+    const swaggerIncome = nextProps.swagger - this.props.swagger;
+    const innovationIncome = nextProps.innovation - this.props.innovation;
+    const animatedIncomes = this.state.animatedIncomes.filter(i => new Date() - i.addedAt < FADE_ANIMATION_LENGTH);
+    let newIncomes = []
+    if(moneyIncome) {
+      newIncomes.push({type: "money", key: this.state.elementId++, addedAt: new Date().getTime(), income: moneyIncome});
+    }
+    if(swaggerIncome) {
+      newIncomes.push({type: "swagger", key: this.state.elementId++, addedAt: new Date().getTime(), income: swaggerIncome});
+    }
+    if(innovationIncome) {
+      newIncomes.push({type: "innovation", key: this.state.elementId++, addedAt: new Date().getTime(), income: innovationIncome});
+    }
     this.setState({
-      moneyIncome: moneyIncome > 0 ? [...income, {key: this.state.elementId++, addedAt: new Date().getTime(), income: moneyIncome}] : [...income]
+      animatedIncomes: animatedIncomes.concat(newIncomes)
     });
   }
 
@@ -32,31 +44,65 @@ class IncomeContainer extends Component {
           <img src="/images/pixel-city.jpg" style={{width: "100%", height: "300px"}}></img>
         </div>
         <div className="row">
-          <div className="col-md-3">
+          <div className="col-md-4">
           Money
           <ReactCSSTransitionGroup
             transitionName="income-animation"
             transitionEnterTimeout={FADE_ANIMATION_LENGTH}
             transitionEnter={true}
             transitionLeave={false}>
-            {this.state.moneyIncome.map(moneyIncome => {
+            {this.state.animatedIncomes.filter(i => i.type == "money").map(income => {
               return (
-                <span key={moneyIncome.key} className="money-income">
-                  + <Money amount={moneyIncome.income} /> <i className="fa fa-money" />
+                <span key={income.key} className="money-income">
+                  + <Money amount={income.income} /> <i className="fa fa-money" />
                 </span>
               )
             })}
           </ReactCSSTransitionGroup>
           </div>
-          <div className="col-md-3">Innovation</div>
-          <div className="col-md-3">Swagger</div>
+          <div className="col-md-4">
+            Innovation
+            <ReactCSSTransitionGroup
+              transitionName="income-animation"
+              transitionEnterTimeout={FADE_ANIMATION_LENGTH}
+              transitionEnter={true}
+              transitionLeave={false}>
+              {this.state.animatedIncomes.filter(i => i.type == "innovation").map(income => {
+                return (
+                  <span key={income.key} className="money-income text-info">
+                    + <Money amount={income.income} /> <i className="fa fa-flask" />
+                  </span>
+                )
+              })}
+            </ReactCSSTransitionGroup>
+          </div>
+          <div className="col-md-4">
+            Swagger
+            <ReactCSSTransitionGroup
+              transitionName="income-animation"
+              transitionEnterTimeout={FADE_ANIMATION_LENGTH}
+              transitionEnter={true}
+              transitionLeave={false}>
+              {this.state.animatedIncomes.filter(i => i.type == "swagger").map(income => {
+                return (
+                  <span key={income.key} className="money-income text-info">
+                    + <Money amount={income.income} /> <i className="fa fa-bolt" />
+                  </span>
+                )
+              })}
+            </ReactCSSTransitionGroup>
+          </div>
         </div>
         <div className="row">
-          <div className="col-md-3 text-success" style={{fontSize: "2em"}}>
+          <div className="col-md-4 text-success" style={{fontSize: "2em"}}>
             $ <Money amount={this.props.money} />
           </div>
-          <div className="col-md-3 text-muted" style={{fontSize: "2em"}}>0</div>
-          <div className="col-md-3 text-muted" style={{fontSize: "2em"}}>0</div>
+          <div className="col-md-4 text-info" style={{fontSize: "2em"}}>
+            {this.props.innovation}
+          </div>
+          <div className="col-md-4 text-info" style={{fontSize: "2em"}}>
+            {this.props.swagger}
+          </div>
         </div>
         <button className="btn btn-block btn-success" style={{minHeight: "50px"}} onClick={this.props.doWork}>
           <i className="fa fa-gears" style={{fontSize: "2em"}}/> Do some Work
@@ -71,19 +117,25 @@ IncomeContainer.contextTypes = {
 };
 
 IncomeContainer.propTypes = {
-  money: React.PropTypes.number.isRequired
+  money: React.PropTypes.number.isRequired,
+  swagger: React.PropTypes.number.isRequired,
+  innovation: React.PropTypes.number.isRequired,
 }
 
 
 const mapStateToProps = (state) => {
   return {
     money: state.money,
+    swagger: state.swagger,
+    innovation: state.innovation
   }
 }
 const mapDispatchToProps = (dispatch) => {
   return {
     doWork: () => {
-      dispatch(createTick())
+      const swaggerAmount = Math.random() < 0.1 ? 1 : 0;
+      const innovationAmount = Math.random() < 0.1 ? 1 : 0;
+      dispatch(createTick(swaggerAmount, innovationAmount))
       dispatch(createClick())
     }
   }

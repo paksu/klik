@@ -12,6 +12,10 @@ const initialState = {
   companyName: undefined,
   // How much money does the player have
   money: 50,
+  // Swagger
+  swagger: 0,
+  // Innovation
+  innovation: 0,
   // The maximum amount of money that the player has ever had. Used for display & achievements
   maxMoney: 50,
   // Current incomes.  Used for display & achievements
@@ -52,7 +56,9 @@ export default function(state = initialState, action) {
         ...state,
         money: state.money + income,
         maxMoney: Math.max(state.maxMoney, state.money + income),
-        moneyIncome: income
+        moneyIncome: income,
+        swagger: state.swagger + action.swaggerAmount,
+        innovation: state.innovation + action.innovationAmount
       }
 
     case "ALTER_MONEY":

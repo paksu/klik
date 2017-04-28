@@ -41,7 +41,9 @@ store.subscribe(throttle(() => {
 }), 1000);
 
 window.setInterval(() => {
-  store.dispatch(createTick());
+  const swaggerAmount = Math.random() < 0.1 ? 1 : 0;
+  const innovationAmount = Math.random() < 0.1 ? 1 : 0;
+  store.dispatch(createTick(swaggerAmount, innovationAmount));
 }, 1000);
 
 const Layout = ({main}) => (
