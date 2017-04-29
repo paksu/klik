@@ -61,27 +61,27 @@ class IncomeContainer extends Component {
     return (
       <div className="col-md-6">
         <div style={{paddingBottom: "20px"}}>
-          <img src="/images/pixel-city.jpg" style={{width: "100%", height: "300px"}}></img>
+          <img alt="Corporate HQ" src="/images/pixel-city.jpg" style={{width: "100%", height: "300px"}}></img>
         </div>
         <div className="row">
           <div className="col-md-4">
           Money
           <IncomeAnimation
-            incomes={this.state.animatedIncomes.filter(i => i.type == "money")}
+            incomes={this.state.animatedIncomes.filter(i => i.type === "money")}
             textStyle="text-success"
             icon="money" />
           </div>
           <div className="col-md-4">
             Innovation
             <IncomeAnimation
-              incomes={this.state.animatedIncomes.filter(i => i.type == "innovation")}
+              incomes={this.state.animatedIncomes.filter(i => i.type === "innovation")}
               textStyle="text-info"
               icon="flask" />
           </div>
           <div className="col-md-4">
             Swagger
             <IncomeAnimation
-              incomes={this.state.animatedIncomes.filter(i => i.type == "swagger")}
+              incomes={this.state.animatedIncomes.filter(i => i.type === "swagger")}
               textStyle="text-info"
               icon="bolt" />
           </div>
