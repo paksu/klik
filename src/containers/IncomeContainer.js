@@ -8,6 +8,23 @@ import './IncomeContainer.css';
 
 const FADE_ANIMATION_LENGTH = 1000;
 
+
+const IncomeAnimation = ({incomes, textStyle, icon}) => (
+  <ReactCSSTransitionGroup
+    transitionName="income-animation"
+    transitionEnterTimeout={FADE_ANIMATION_LENGTH}
+    transitionEnter={true}
+    transitionLeave={false}>
+    {incomes.map(income => {
+      return (
+        <span key={income.key} className={"money-income " + textStyle}>
+          + <Money amount={income.income} /> <i className={"fa fa-" + icon} />
+        </span>
+      )
+    })}
+  </ReactCSSTransitionGroup>
+)
+
 class IncomeContainer extends Component {
   constructor(props) {
     super(props);
@@ -49,51 +66,24 @@ class IncomeContainer extends Component {
         <div className="row">
           <div className="col-md-4">
           Money
-          <ReactCSSTransitionGroup
-            transitionName="income-animation"
-            transitionEnterTimeout={FADE_ANIMATION_LENGTH}
-            transitionEnter={true}
-            transitionLeave={false}>
-            {this.state.animatedIncomes.filter(i => i.type == "money").map(income => {
-              return (
-                <span key={income.key} className="money-income">
-                  + <Money amount={income.income} /> <i className="fa fa-money" />
-                </span>
-              )
-            })}
-          </ReactCSSTransitionGroup>
+          <IncomeAnimation
+            incomes={this.state.animatedIncomes.filter(i => i.type == "money")}
+            textStyle="text-success"
+            icon="money" />
           </div>
           <div className="col-md-4">
             Innovation
-            <ReactCSSTransitionGroup
-              transitionName="income-animation"
-              transitionEnterTimeout={FADE_ANIMATION_LENGTH}
-              transitionEnter={true}
-              transitionLeave={false}>
-              {this.state.animatedIncomes.filter(i => i.type == "innovation").map(income => {
-                return (
-                  <span key={income.key} className="money-income text-info">
-                    + <Money amount={income.income} /> <i className="fa fa-flask" />
-                  </span>
-                )
-              })}
-            </ReactCSSTransitionGroup>
+            <IncomeAnimation
+              incomes={this.state.animatedIncomes.filter(i => i.type == "innovation")}
+              textStyle="text-info"
+              icon="flask" />
           </div>
           <div className="col-md-4">
             Swagger
-            <ReactCSSTransitionGroup
-              transitionName="income-animation"
-              transitionEnterTimeout={FADE_ANIMATION_LENGTH}
-              transitionEnter={true}
-              transitionLeave={false}>
-              {this.state.animatedIncomes.filter(i => i.type == "swagger").map(income => {
-                return (
-                  <span key={income.key} className="money-income text-info">
-                    + <Money amount={income.income} /> <i className="fa fa-bolt" />
-                  </span>
-                )
-              })}
-            </ReactCSSTransitionGroup>
+            <IncomeAnimation
+              incomes={this.state.animatedIncomes.filter(i => i.type == "swagger")}
+              textStyle="text-info"
+              icon="bolt" />
           </div>
         </div>
         <div className="row">
