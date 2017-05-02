@@ -60,8 +60,14 @@ class IncomeContainer extends Component {
   render() {
     return (
       <div className="col-md-6">
-        <div style={{paddingBottom: "20px"}}>
-          <img alt="Corporate HQ" src="/images/pixel-city.jpg" style={{width: "100%", height: "300px"}}></img>
+        <div className="row">
+          <div className="col-md-4">
+            <h1>{this.props.companyName} HQ</h1>
+            <h4><i className="fa fa-diamond" /> Level 1</h4>
+          </div>
+          <div className="col-md-8">
+            <img alt="Corporate HQ" src="/images/hq.jpg" style={{width: "100%"}}></img>
+          </div>
         </div>
         <div className="row">
           <div className="col-md-4">
@@ -79,7 +85,7 @@ class IncomeContainer extends Component {
               icon="flask" />
           </div>
           <div className="col-md-4">
-            Swagger
+            Swag level
             <IncomeAnimation
               incomes={this.state.animatedIncomes.filter(i => i.type === "swagger")}
               textStyle="text-info"
@@ -91,10 +97,10 @@ class IncomeContainer extends Component {
             $ <Money amount={this.props.money} />
           </div>
           <div className="col-md-4 text-info" style={{fontSize: "2em"}}>
-            {this.props.innovation}
+            <i className="fa fa-flask" /> {this.props.innovation}
           </div>
           <div className="col-md-4 text-info" style={{fontSize: "2em"}}>
-            {this.props.swagger}
+            <i className="fa fa-bolt" /> {this.props.swagger}
           </div>
         </div>
         <button className="btn btn-block btn-success" style={{minHeight: "50px"}} onClick={this.props.doWork}>
@@ -120,7 +126,8 @@ const mapStateToProps = (state) => {
   return {
     money: state.money,
     swagger: state.swagger,
-    innovation: state.innovation
+    innovation: state.innovation,
+    companyName: state.companyName
   }
 }
 const mapDispatchToProps = (dispatch) => {

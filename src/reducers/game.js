@@ -67,6 +67,12 @@ export default function(state = initialState, action) {
         money: state.money + action.amount
       }
 
+    case "ALTER_SWAGGER":
+      return {
+        ...state,
+        swagger: state.swagger + action.amount
+      }
+
     case "ADD_BUILDING":
       return {
         ...state,

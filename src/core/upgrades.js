@@ -8,9 +8,9 @@ export const UPGRADES = [
     effect: "Doubles profits from sales guy",
     flavour: "Amazing sport. Doubles profits from sales guy",
     icon: "game-icon-green game-icon game-icon-golf-flag",
-    cost: 1000,
+    cost: 10,
     factor: 1,
-    visibleAfter: 100,
+    visibleAfter: 1,
     buildingId: 'SALES_GUY'
   }, {
     id: 2,
@@ -18,9 +18,9 @@ export const UPGRADES = [
     effect: "2x profit from Sales guy",
     flavour: "A good competition will increase sales",
     icon: "game-icon-yellow game-icon game-icon-ringing-bell",
-    cost: 10000,
+    cost: 100,
     factor: 1,
-    visibleAfter: 1000,
+    visibleAfter: 10,
     buildingId: 'SALES_GUY'
   }, {
     id: 3,
@@ -28,9 +28,9 @@ export const UPGRADES = [
     effect: "Sales Guy profits increased 100%",
     flavour: "This gadget makes cold calling more efficient",
     icon: "game-icon-purple game-icon game-icon-phone",
-    cost: 1e5,
+    cost: 1000,
     factor: 1,
-    visibleAfter: 10000,
+    visibleAfter: 100,
     buildingId: 'SALES_GUY',
   }, {
     id: 4,
@@ -38,9 +38,9 @@ export const UPGRADES = [
     effect: "2x profit from Sales Guy",
     flavour: "You can sell more if you travel faster",
     icon: "game-icon-cyan game-icon game-icon-city-car",
-    cost: 1e6,
+    cost: 10000,
     factor: 1,
-    visibleAfter: 1e5,
+    visibleAfter: 1000,
     buildingId: 'SALES_GUY',
   },
   /*
@@ -52,9 +52,9 @@ export const UPGRADES = [
     effect: "Junior developer profit x2",
     flavour: "Yay! New hardware",
     icon: "game-icon-yellow game-icon game-icon-abstract-007",
-    cost: 15000,
+    cost: 150,
     factor: 1,
-    visibleAfter: 1000,
+    visibleAfter: 25,
     buildingId: 'JUNIOR_DEVELOPER',
   }, {
     id: 6,
@@ -62,9 +62,9 @@ export const UPGRADES = [
     effect: "Jr dev profits increased 100%",
     flavour: "Soda + code = productivity++",
     icon: "game-icon-purple game-icon game-icon-anchor",
-    cost: 150000,
+    cost: 1500,
     factor: 1,
-    visibleAfter: 20000,
+    visibleAfter: 250,
     buildingId: 'JUNIOR_DEVELOPER'
   }, {
     id: 7,
@@ -72,9 +72,9 @@ export const UPGRADES = [
     effect: "100% profit increase for Jr dev",
     flavour: "Dropping some acid really boosts creativity",
     icon: "game-icon-green game-icon game-icon-acid",
-    cost: 1.5e6,
+    cost: 15000,
     factor: 1,
-    visibleAfter: 200000,
+    visibleAfter: 2000,
     buildingId: 'JUNIOR_DEVELOPER'
   }, {
     id: 8,
@@ -82,9 +82,9 @@ export const UPGRADES = [
     effect: "Jr devs work faster. 2x profits",
     flavour: "Yay! Faster internet!",
     icon: "game-icon-red game-icon game-icon-aerial-signal",
-    cost: 1e6,
+    cost: 25000,
     factor: 1,
-    visibleAfter: 1e5,
+    visibleAfter: 2000,
     buildingId: 'JUNIOR_DEVELOPER',
   }
 ]
