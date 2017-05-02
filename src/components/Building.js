@@ -8,11 +8,16 @@ const Building = ({building, onBuildingClick, canAfford}) => (
       <i className={building.icon}></i>
     </div>
     <div className="media-body">
-      <h4 className="media-heading">{building.name} <span className="text-success">+<Money amount={building.count*building.income*building.incomeFactor} />$</span></h4>
-      <span style={{display: "inline-block"}} className="label label-success">+{building.income * building.incomeFactor} $</span>
-      <span style={{display: "inline-block"}} className="label label-default">x {building.count}</span>
-      <span style={{display: "inline-block"}} className="label label-danger">Cost <Money amount={building.cost}/></span>
-      <span style={{display: "inline-block"}} className="label label-primary">LVL { building.incomeFactor}</span>
+      <h4 className="media-heading">
+        {building.name}
+        {" "}
+        <span className="text-danger">$<Money amount={building.cost}/></span>
+      </h4>
+      <h5 className="media-heading">
+        <span style={{display: "inline-block"}} className="text-muted">{building.count}</span>
+        {" | "}
+        <span className="text-success">+$<Money amount={building.count*building.income*building.incomeFactor} /></span>
+      </h5>
     </div>
   </div>
 )
