@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group' // ES6
-import { connect } from 'react-redux';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import Money from '../components/Money';
-import { createTick, createClick } from '../actions';
 
-import './IncomeContainer.css';
+import './Income.css';
 
 const FADE_ANIMATION_LENGTH = 1000;
 
@@ -36,7 +34,7 @@ class IncomeContainer extends Component {
 
   componentWillReceiveProps(nextProps) {
     const moneyIncome = nextProps.money - this.props.money;
-    const swaggerIncome = nextProps.swagger - this.props.swagger;
+    const swagIncome = nextProps.swag - this.props.swag;
     const innovationIncome = nextProps.innovation - this.props.innovation;
     const animatedIncomes = this.state.animatedIncomes.filter(i => new Date() - i.addedAt < FADE_ANIMATION_LENGTH);
 
@@ -45,8 +43,8 @@ class IncomeContainer extends Component {
     if(moneyIncome > 0) {
       newIncomes.push({type: "money", key: this.state.elementId++, addedAt: new Date().getTime(), income: moneyIncome});
     }
-    if(swaggerIncome > 0) {
-      newIncomes.push({type: "swagger", key: this.state.elementId++, addedAt: new Date().getTime(), income: swaggerIncome});
+    if(swagIncome > 0) {
+      newIncomes.push({type: "swag", key: this.state.elementId++, addedAt: new Date().getTime(), income: swagIncome});
     }
     if(innovationIncome > 0) {
       newIncomes.push({type: "innovation", key: this.state.elementId++, addedAt: new Date().getTime(), income: innovationIncome});
@@ -59,16 +57,7 @@ class IncomeContainer extends Component {
 
   render() {
     return (
-      <div className="col-md-6">
-        <div className="row">
-          <div className="col-md-4">
-            <h1>{this.props.companyName} HQ</h1>
-            <h4><i className="fa fa-diamond" /> Level 1</h4>
-          </div>
-          <div className="col-md-8">
-            <img alt="Corporate HQ" src="/images/hq.jpg" style={{width: "100%"}}></img>
-          </div>
-        </div>
+      <div>
         <div className="row">
           <div className="col-md-4">
           Money
@@ -87,7 +76,7 @@ class IncomeContainer extends Component {
           <div className="col-md-4">
             Swag level
             <IncomeAnimation
-              incomes={this.state.animatedIncomes.filter(i => i.type === "swagger")}
+              incomes={this.state.animatedIncomes.filter(i => i.type === "swag")}
               textStyle="text-info"
               icon="bolt" />
           </div>
@@ -100,47 +89,18 @@ class IncomeContainer extends Component {
             <i className="fa fa-flask" /> {this.props.innovation}
           </div>
           <div className="col-md-4 text-info" style={{fontSize: "2em"}}>
-            <i className="fa fa-bolt" /> {this.props.swagger}
+            <i className="fa fa-bolt" /> {this.props.swag}
           </div>
         </div>
-        <button className="btn btn-block btn-success" style={{minHeight: "50px"}} onClick={this.props.doWork}>
-          <i className="fa fa-gears" style={{fontSize: "2em"}}/> Do some Work
-        </button>
       </div>
     )
   }
 }
 
-IncomeContainer.contextTypes = {
-  store: React.PropTypes.object
-};
-
 IncomeContainer.propTypes = {
   money: React.PropTypes.number.isRequired,
-  swagger: React.PropTypes.number.isRequired,
+  swag: React.PropTypes.number.isRequired,
   innovation: React.PropTypes.number.isRequired,
 }
 
-
-const mapStateToProps = (state) => {
-  return {
-    money: state.money,
-    swagger: state.swagger,
-    innovation: state.innovation,
-    companyName: state.companyName
-  }
-}
-const mapDispatchToProps = (dispatch) => {
-  return {
-    doWork: () => {
-      const swaggerAmount = Math.random() < 0.1 ? 1 : 0;
-      const innovationAmount = Math.random() < 0.1 ? 1 : 0;
-      dispatch(createTick(swaggerAmount, innovationAmount))
-      dispatch(createClick())
-    }
-  }
-}
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(IncomeContainer)
+export default IncomeContainer
