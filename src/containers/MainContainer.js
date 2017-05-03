@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Income from '../components/Income';
-import { createTick, createClick } from '../actions';
+import { createTick, createClick, alterInnovation } from '../actions';
 
+const BOOST_INNOVATION_COST = 100
 
 class MainContainer extends Component {
   render() {
@@ -25,26 +26,18 @@ class MainContainer extends Component {
             <button className="btn btn-block btn-success" style={{minHeight: "50px"}} onClick={this.props.doWork}>
               <i className="fa fa-gears" style={{fontSize: "2em"}}/> Do some Work
             </button>
+          </div>
         </div>
-      </div>
-        <div className="row">
-          <div className="col-md-12">
-            <h4>Boosts</h4>
-            <div>
-              <span className="text-primary"><i className="fa fa-flask" /> 100</span>
-              {" Kilpailukyky "}
-              <button disabled="true" className="btn btn-default btn-small">
-                <i className="fa fa-plus" /> 100% extra income for 5 minutes
-              </button>
-            </div>
-            <div>
-              <span className="text-primary"><i className="fa fa-flask" /> 1000</span>
-              {" Kilpailukyky 2 "}
-              <button disabled="true" className="btn btn-default btn-small">
-              <i className="fa fa-plus" /> 100% extra income for 120 minutes
-              </button>
 
-            </div>
+        <div className="row" style={{opacity: this.props.innovation >= BOOST_INNOVATION_COST ? 1.0 : 0.5 }}>
+          <div className="col-md-12">
+            <h4><i className="fa fa-flask" /> Boosts</h4>
+              <button disabled={this.props.innovation <= BOOST_INNOVATION_COST} className="btn btn-default btn-block">
+                <i className="fa fa-flask" /> {BOOST_INNOVATION_COST} | +100% extra income for 5 minutes
+              </button>
+              <button disabled={this.props.innovation <= BOOST_INNOVATION_COST*10} className="btn btn-default btn-block">
+                <i className="fa fa-flask" /> {BOOST_INNOVATION_COST*10} | +100% extra income for 60 minutes
+              </button>
           </div>
         </div>
       </div>
@@ -55,7 +48,7 @@ class MainContainer extends Component {
 MainContainer.propTypes = {
   money: React.PropTypes.number.isRequired,
   swag: React.PropTypes.number.isRequired,
-  innovation: React.PropTypes.number.isRequired,
+  innovation: React.PropTypes.number.isRequired
 }
 
 

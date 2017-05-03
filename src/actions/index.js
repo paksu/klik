@@ -2,6 +2,7 @@ export const PROCESS_TICK = 'PROCESS_TICK';
 export const ADD_BUILDING = 'ADD_BUILDING';
 export const ALTER_MONEY = 'ALTER_MONEY';
 export const ALTER_SWAGGER = 'ALTER_SWAGGER';
+export const ALTER_INNOVATION = 'ALTER_INNOVATION';
 export const ADD_UPGRADE = 'ADD_UPGRADE';
 export const SET_COMPANYNAME = 'SET_COMPANYNAME';
 export const CHEAT_RESTART = 'CHEAT_RESTART';
@@ -28,6 +29,10 @@ export function alterMoney(amount) {
 
 export function alterSwagger(amount) {
   return { type: ALTER_SWAGGER, amount }
+}
+
+export function alterInnovation(amount) {
+  return { type: ALTER_INNOVATION, amount }
 }
 
 export function buyUpgrade(upgrade) {
